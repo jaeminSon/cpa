@@ -7,7 +7,7 @@
   "displayName": "CP Assistant",
   "description": "Competitive programming helper with OpenAI",
   "version": "0.0.1",
-  "publisher": "local",
+  "publisher": "JaeminSon",
   "license": "UNLICENSED",
   "engines": {
     "vscode": "^1.90.0"
