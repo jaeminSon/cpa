@@ -102,6 +102,26 @@
         "cpAssistant.openaiModel": {
           "type": "string",
           "default": "gpt-4.1-mini",
+          "enum": [
+            "gpt-4.1",
+            "gpt-4.1-mini",
+            "gpt-4.1-nano",
+            "gpt-4o",
+            "gpt-4o-mini",
+            "o1",
+            "o1-mini",
+            "o1-preview"
+          ],
+          "enumDescriptions": [
+            "High-quality GPT-4.1 model.",
+            "Lower-cost GPT-4.1 mini model (default).",
+            "Smallest GPT-4.1 nano model.",
+            "GPT-4o flagship model.",
+            "Smaller GPT-4o mini model.",
+            "o1 reasoning model.",
+            "o1 mini reasoning model.",
+            "o1 preview reasoning model."
+          ],
           "description": "OpenAI model used for chat completions"
         },
         "cpAssistant.maxTokens": {
