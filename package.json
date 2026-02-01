@@ -1,0 +1,135 @@
+{
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jaeminSon/cpa.git"
+  },
+  "name": "cp-assistant",
+  "displayName": "CP Assistant",
+  "description": "Competitive programming helper with OpenAI",
+  "version": "0.0.1",
+  "publisher": "local",
+  "license": "UNLICENSED",
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:cpAssistant.open",
+    "onCommand:cpAssistant.setApiKey",
+    "onCommand:cpAssistant.clearApiKey",
+    "onView:cpAssistant.sidebar"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "cpAssistant",
+          "title": "CP ASSISTANT",
+          "icon": "$(beaker)"
+        }
+      ]
+    },
+    "views": {
+      "cpAssistant": [
+        {
+          "type": "webview",
+          "id": "cpAssistant.sidebar",
+          "name": "",
+          "icon": "$(beaker)"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "cpAssistant.open",
+        "title": "CP Assistant: Open",
+        "icon": "$(open-preview)"
+      },
+      {
+        "command": "cpAssistant.clearConversation",
+        "title": "CP Assistant: Clear Conversation",
+        "icon": "$(clear-all)"
+      },
+      {
+        "command": "cpAssistant.setApiKey",
+        "title": "CP Assistant: Set OpenAI API Key",
+        "icon": "$(key)"
+      },
+      {
+        "command": "cpAssistant.clearApiKey",
+        "title": "CP Assistant: Clear OpenAI API Key",
+        "icon": "$(clear-all)"
+      }
+    ],
+    "menus": {
+      "view/title": [
+        {
+          "command": "cpAssistant.clearConversation",
+          "when": "view == cpAssistant.sidebar",
+          "group": "navigation@0"
+        },
+        {
+          "command": "cpAssistant.setApiKey",
+          "when": "view == cpAssistant.sidebar",
+          "group": "navigation@1"
+        }
+      ],
+      "commandPalette": [
+        {
+          "command": "cpAssistant.open",
+          "when": "false"
+        },
+        {
+          "command": "cpAssistant.clearConversation",
+          "when": "false"
+        },
+        {
+          "command": "cpAssistant.setApiKey",
+          "when": "false"
+        },
+        {
+          "command": "cpAssistant.clearApiKey",
+          "when": "false"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "CP Assistant",
+      "properties": {
+        "cpAssistant.openaiModel": {
+          "type": "string",
+          "default": "gpt-4.1-mini",
+          "description": "OpenAI model used for chat completions"
+        },
+        "cpAssistant.maxTokens": {
+          "type": "number",
+          "default": 1200,
+          "minimum": 64,
+          "maximum": 8192,
+          "description": "Maximum tokens to generate per response"
+        },
+        "cpAssistant.temperature": {
+          "type": "number",
+          "default": 0.3,
+          "minimum": 0,
+          "maximum": 2,
+          "description": "Sampling temperature"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "compile": "tsc -p .",
+    "watch": "tsc -w -p .",
+    "lint": "node -e \"console.log('no lint configured')\"",
+    "vscode:prepublish": "npm run compile"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.30",
+    "@types/vscode": "^1.90.0",
+    "typescript": "^5.5.4"
+  }
+}
