@@ -253,8 +253,7 @@ class CpAssistantController implements vscode.WebviewViewProvider {
       { role: 'system', content: systemParts.join('\n\n') },
     ];
 
-    // Keep the most recent turns to stay within context.
-    const recent = this.chatHistory.slice(-12);
+    const recent = this.chatHistory;
     for (const m of recent) messages.push({ role: m.role, content: m.content });
 
     const assistantText = await openaiChatCompletion({
