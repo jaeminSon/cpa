@@ -1,0 +1,13 @@
+# Misc
+.DS_Store
+
+# Dependencies
+**/node_modules/
+
+# Build artifacts
+*/out/
+*.vsix
+
+# VS Code extension testing
+.vscode
+.vscode-test
