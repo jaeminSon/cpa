@@ -28,7 +28,7 @@
         {
           "id": "cpAssistant",
           "title": "CP ASSISTANT",
-          "icon": "$(beaker)"
+          "icon": "$(hubot)"
         }
       ]
     },
@@ -38,7 +38,7 @@
           "type": "webview",
           "id": "cpAssistant.sidebar",
           "name": "",
-          "icon": "$(beaker)"
+          "icon": "$(hubot)"
         }
       ]
     },
