@@ -4,6 +4,7 @@
   const state = {
     isAuthed: false,
     url: '',
+    lastFetchedUrl: '',
     draft: '',
     pasteFallback: null,
   };
@@ -188,6 +189,7 @@
         const chat = document.getElementById('chat');
         if (chat) chat.innerHTML = '';
         state.pasteFallback = null;
+        state.lastFetchedUrl = '';
         render();
         break;
       }
